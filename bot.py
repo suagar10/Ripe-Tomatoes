@@ -76,7 +76,11 @@ async def on_message(message):
         help_message = 'This bot is designed to classify comment sentiments on the fly. Just type in a comment and it will classify it for you as either positive, neutral or negative. A little detailed comments are encouraged for the bot to make a sound prediction. Please refrain from the use of emojis'
         response = help_message
     else:
-        response = prediction_maker(input_text=message.content)
+        msg = message.content.split(' ')
+        if len(msg) in range(1, 11):
+            response = 'Write a longer message please (More than 10 words)'
+        else:
+            response = prediction_maker(input_text=message.content)
     await message.channel.send(response)
 
 bot.run(TOKEN)
