@@ -5,8 +5,6 @@ warnings.filterwarnings("ignore", category=DeprecationWarning)
 warnings.filterwarnings("ignore", category=FutureWarning)
 from silence_tensorflow import silence_tensorflow
 silence_tensorflow()
-import tensorflow as tf
-tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.FATAL)
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.preprocessing.text import Tokenizer
