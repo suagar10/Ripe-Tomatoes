@@ -26,3 +26,5 @@ The model used here is a combination of 1d convolutions as bidirectional LSTMs w
  * [bot.py](bot.py) : This script runs the bot and is the main program for the bot
  * [requirements.txt](requirements.txt): This script contains all the necessary libraries required to run the bot on Heroku.
  * [Procfile](Procfile): This file tells Heroku server what file does it needs to run first.
+
+Join this [server](https://discord.gg/v5cVpt) to test the bot!
