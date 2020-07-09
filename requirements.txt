@@ -1,0 +1,6 @@
+tensorflow==1.15.2
+keras
+python-dotenv
+discord.py
+silence-tensorflow
+numpy==1.18.4
