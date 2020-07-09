@@ -13,13 +13,13 @@ Originally this dataset contains around *8 million* samples of reviews collected
 * 3 stars - Neutral
 * 4 and 5 stars - Positive
 
-But since I had limited resources, I used _1.2 million_ reviews. Another reason why I used these many reviews was also to maintain equal number of samples for all three classes. I had taken _512k_ samples for each class.
+But since I had limited resources, I used _1.2 million_ reviews. Another reason why I used these many reviews was also to maintain equal number of samples for all three classes. I took _512k_ samples for each class.
 
 This is their distribution:
 ![Image](dataset-analysis.png)
 
 ### Model
-The model used here is a combination of 1d convolutions as bidirectional LSTMs with also an added Embedding layer of 50 dimensions. The model had a test accuracy of ≈ **82%**. You can use the [predictor.py](predictor.py) file to test the code in your computer.
+The [model](main_model.ipynb) used here is a combination of 1d convolutions and bidirectional LSTMs with also an added Embedding layer of 50 dimensions. The model had a test accuracy of ≈ **82%**. You can use the [predictor.py](predictor.py) file to test the code in your computer.
 
 ## Discord Bot
  The bot has been made using Discord's [discord.py](https://discordpy.readthedocs.io/en/latest/) api. Its super easy to learn and make bots. I was able to deploy my bot online thanks to [Heroku](https://www.heroku.com)'s free dyno. The scripts I have used are:
