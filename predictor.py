@@ -34,21 +34,26 @@ def text_cleaner(text_part):
 
 # Inputting and cleaned the text
 input_text = input('Enter your string: ')
-processed_text = [text_cleaner(input_text)]
+processed_text = text_cleaner(input_text)
+no_of_words = len(processed_text.split(' '))
+if no_of_words < 10:
+    print('Write a longer message please (More than 10 words)')
+else:        
+    processed_text = [processed_text]
 
-#sample_statement1 = ['The movie was absolutely fantastic to watch. Actors did a great job and kudos to the directors. Had a great time!']
-#sample_statement2 = ['The movie was ok to watch. Was not that bad. Definetly a one time watch. Although there were a lot of points in the movie which could have made more appealing. Nonetheless, its worth a watch']
-#sample_statement3 = ['This car looks absolutely disgusting. What a waste of money!!! And the performance is also not good, a car of this segment should deliver certain features which this model clearly lacks']
+    #sample_statement1 = ['The movie was absolutely fantastic to watch. Actors did a great job and kudos to the directors. Had a great time!']
+    #sample_statement2 = ['The movie was ok to watch. Was not that bad. Definetly a one time watch. Although there were a lot of points in the movie which could have made more appealing. Nonetheless, its worth a watch']
+    #sample_statement3 = ['This car looks absolutely disgusting. What a waste of money!!! And the performance is also not good, a car of this segment should deliver certain features which this model clearly lacks']
 
-# tokenizing the text
-tokenizer.fit_on_texts(processed_text)
-sequence = tokenizer.texts_to_sequences(processed_text)
-sequence = pad_sequences(sequence, maxlen=200)
+    # tokenizing the text
+    tokenizer.fit_on_texts(processed_text)
+    sequence = tokenizer.texts_to_sequences(processed_text)
+    sequence = pad_sequences(sequence, maxlen=200)
 
-# Model in action
-model = load_model('trained_model.h5')
-prediction = model.predict(sequence)
-prediction_classes = ['Negative', 'Neutral', 'Positive']
-predicted_class = prediction_classes[np.argmax(prediction)]
+    # Model in action
+    model = load_model('trained_model.h5')
+    prediction = model.predict(sequence)
+    prediction_classes = ['Negative', 'Neutral', 'Positive']
+    predicted_class = prediction_classes[np.argmax(prediction)]
 
-print('\n\nYour text has the sentiment: ', predicted_class)
+    print('\n\nYour text has the sentiment: ', predicted_class)
