@@ -3,4 +3,4 @@ keras
 python-dotenv
 discord.py
 silence-tensorflow
-numpy==1.18.4
+numpy==1.22.0
